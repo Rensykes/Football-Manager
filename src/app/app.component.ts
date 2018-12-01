@@ -12,7 +12,7 @@ import { HttpHeaders } from '@angular/common/http';
   providers:[FetchdataService]
 })
 export class AppComponent implements OnInit{
-  posts=[''];
+  posts={};
   title='Angular HttpClient';
   //Url = "https://jsonplaceholder.typicode.com/posts"
   header = new HttpHeaders({'X-Auth-Token':'aa89ef54a73b4df6a2e389906426b90b'})
@@ -32,11 +32,12 @@ export class AppComponent implements OnInit{
  getPosts() : void {
   this.srv.getData(this.Url)
     .subscribe(
-      data => this.posts.push(...data),
+      data => { 
+        this.posts.push(...data);
+        console.log(data);},
       error=> console.log(error)
     )
-    //console.log(this.srv.getData(this.Url));
-    //console.log(this.posts);
+    console.log(this.posts);
 }
   ngOnInit(){
     this.getPosts()
