@@ -14,6 +14,12 @@ export class FetchdataService {
       headers: {'X-Auth-Token':'aa89ef54a73b4df6a2e389906426b90b'}
     })
   }
+  
+  /*
+ getData(url:string){
+   return this.getData(url);
+ }
+ */
 
 }
 

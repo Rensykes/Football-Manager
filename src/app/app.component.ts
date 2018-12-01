@@ -20,6 +20,7 @@ export class AppComponent implements OnInit{
 
   // inject FetchdataService service
   constructor(private srv: FetchdataService) { }
+  
   /*
   getPosts() : void {
     this.srv.getData(this.Url)
@@ -29,16 +30,22 @@ export class AppComponent implements OnInit{
       )
   }
   */
+  
+ 
  getPosts() : void {
   this.srv.getData(this.Url)
     .subscribe(
       data => { 
-        this.posts.push(...data);
-        console.log(data);},
+        this.posts['matches'] = data['matches'];
+        console.log(data);
+        console.log(this.posts);
+      },
       error=> console.log(error)
     )
     console.log(this.posts);
 }
+
+
   ngOnInit(){
     this.getPosts()
   }
