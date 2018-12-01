@@ -13,6 +13,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class AppComponent implements OnInit{
   posts={};
+  postJSON:JSON;
   title='Angular HttpClient';
   //Url = "https://jsonplaceholder.typicode.com/posts"
   header = new HttpHeaders({'X-Auth-Token':'aa89ef54a73b4df6a2e389906426b90b'})
@@ -35,14 +36,24 @@ export class AppComponent implements OnInit{
  getPosts() : void {
   this.srv.getData(this.Url)
     .subscribe(
-      data => { 
+      data => {
+        this.posts['campionato'] = data['competition'];
         this.posts['matches'] = data['matches'];
-        console.log(data);
-        console.log(this.posts);
+        for(let match in data['matches']){
+          
+          console.log(data['matches'][match]['homeTeam'].name + " - " + data['matches'][match]['awayTeam'].name);
+          
+        }
       },
       error=> console.log(error)
     )
+    /*
+    var x =JSON.parse(JSON.stringify(this.posts));
+    console.log(x.matches);
+    Object.keys(this.posts);
     console.log(this.posts);
+    */
+   //console.log(this.posts.matches);
 }
 
 
