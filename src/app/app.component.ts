@@ -15,23 +15,13 @@ export class AppComponent implements OnInit{
   posts={};
   postJSON:JSON;
   title='Angular HttpClient';
-  //Url = "https://jsonplaceholder.typicode.com/posts"
   header = new HttpHeaders({'X-Auth-Token':'aa89ef54a73b4df6a2e389906426b90b'})
   Url = "https://api.football-data.org/v2/competitions/SA/matches"
+  sfide=[];
 
-  // inject FetchdataService service
   constructor(private srv: FetchdataService) { }
   
-  /*
-  getPosts() : void {
-    this.srv.getData(this.Url)
-      .subscribe(
-        data => this.posts.push(...data),
-        error=> console.log(error)
-      )
-  }
-  */
-  
+
  
  getPosts() : void {
   this.srv.getData(this.Url)
@@ -40,21 +30,18 @@ export class AppComponent implements OnInit{
         this.posts['campionato'] = data['competition'];
         this.posts['matches'] = data['matches'];
         for(let match in data['matches']){
-          
-          console.log(data['matches'][match]['homeTeam'].name + " - " + data['matches'][match]['awayTeam'].name);
-          
+          this.sfide.push({id:data['matches'][match].id,homeTeam:data['matches'][match].homeTeam,
+          awayTeam:data['matches'][match].awayTeam,utcDate:data['matches'][match].utcDate,
+          score:data['matches'][match].score});
+        }
+        console.log(this.sfide[0].score.fullTime.homeTeam);
+        for(let match in this.sfide){
+          console.log(match['id']);
         }
       },
       error=> console.log(error)
     )
-    /*
-    var x =JSON.parse(JSON.stringify(this.posts));
-    console.log(x.matches);
-    Object.keys(this.posts);
-    console.log(this.posts);
-    */
-   //console.log(this.posts.matches);
-}
+  }
 
 
   ngOnInit(){
