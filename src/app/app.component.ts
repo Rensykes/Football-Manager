@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
   title='Partite e risultati per oggi';
   header = new HttpHeaders({'X-Auth-Token':'aa89ef54a73b4df6a2e389906426b90b'})
   campionati = [{name: 'Serie A', tag: 'SA'}, {name: 'Champions League', tag: 'CL'}, {name: 'Premier League', tag: 'PL'}, {name: 'France League 1', tag: 'FL1'}, {name: 'Bundesliga', tag: 'BL1'}, {name: 'Eredivise', tag: 'DED'}, {name: 'Liga Spagnola', tag: 'PD'}, {name: 'Europa League', tag: 'EC'}, {name: 'Portoguese Primera Division', tag: 'PPL'}];
-  selectedChampionsip = {};
+  selectedChampionsip = "";
   //Url = "https://api.football-data.org/v2/competitions/SA/matches" //Tutti i match dall'inizio alla fine della serie A
   //UrlToday = 'https://api.football-data.org/v2/matches'; //Tutte le partite dai oggi di tutti i campionati
   //UrlScheduled = 'https://api.football-data.org/v2/competitions/SA/matches?status=SCHEDULED'; //Tutte le partite in programma da oggi alla fine del campionato
@@ -55,11 +55,13 @@ export class AppComponent implements OnInit{
 
   changeChampionship(campionato): void{
     this.sfide = [];
-    this.selectedChampionsip = campionato;
-    this.Url = "https://api.football-data.org/v2/competitions/" + this.selectedChampionsip.tag + "/matches";
+    this.selectedChampionsip = campionato.tag;
+    
+    this.Url = "https://api.football-data.org/v2/competitions/" + this.selectedChampionsip + "/matches";
     this.UrlToday = 'https://api.football-data.org/v2/matches'; //Tutte le partite dai oggi di tutti i campionati
-    this.UrlScheduled = 'https://api.football-data.org/v2/competitions/' + this.selectedChampionsip.tag + '/matches?status=SCHEDULED'; //Tutte le partite in programma da oggi alla fine del campionato
-    this.UrlFinished = 'https://api.football-data.org/v2/competitions/' + this.selectedChampionsip.tag + '/matches?status=FINISHED'; //Tutte le partite passate
+    this.UrlScheduled = 'https://api.football-data.org/v2/competitions/' + this.selectedChampionsip + '/matches?status=SCHEDULED'; //Tutte le partite in programma da oggi alla fine del campionato
+    this.UrlFinished = 'https://api.football-data.org/v2/competitions/' + this.selectedChampionsip + '/matches?status=FINISHED'; //Tutte le partite passate
+    
     this.getPosts();
   }
 
