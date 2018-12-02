@@ -12,6 +12,7 @@ import { AppRoutingModule} from 'src/app/app-routing.module';
 import { AppComponent } from './app.component';
 import { MatchListComponent } from './match-list/match-list.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
+import { PlayerDetailsComponent } from './player-details/player-details.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
     AppComponent,
     TitleComponent,
     MatchListComponent,
-    TeamDetailsComponent
+    TeamDetailsComponent,
+    PlayerDetailsComponent
   
   ],
   imports: [

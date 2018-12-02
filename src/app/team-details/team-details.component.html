@@ -1,4 +1,11 @@
 <p>{{ team.address }}</p>
 <img src="{{team.crestUrl}}">
-
+ 
+<ul>
+    <li *ngFor="let player of team.squad">
+        {{player.name}}
+ 
+    </li>
+</ul>
+ 
 <a routerLink="/matches">Back</a>
