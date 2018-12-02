@@ -1,0 +1,349 @@
+h1{
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h2{
+  font-size: 20px;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+label{
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.home{
+  font-size: 12px;
+  color: #fff;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+input[type=text] {
+    padding:5px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=file] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(25, 51, 77, .8);
+  border: 1px solid rgba(255, 255, 255, .3);
+ }
+.tbl-content{
+  background-color: rgba(38, 77, 115, .5);
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+
+table a:link, table a:visited, table a:active {
+  color: #fff;
+  text-decoration: none;
+}
+
+table a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+section{
+  margin: 50px;
+}
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+
+/* DROPDOWN */
+
+body {
+  background: #2a2a2b;
+  color: #fff;
+  text-align: center;
+  font-family: Arial, Helvetica;
+}
+
+.big {
+  font-size: 1.2em;
+}
+
+.small {
+  font-size: .7em;
+}
+
+.square {
+  width: .7em;
+  height: .7em;
+  margin: .5em;
+  display: inline-block;
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.custom-dropdown select {
+  background-color: #264d73;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;	 
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.custom-dropdown::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.custom-dropdown::after {
+  color: rgba(0,0,0,.4);
+}
+
+
+
+/* BUTTON */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+
+*{margin: 0px; padding: 0px}
+
+
+button{
+color:#fff;
+text-align: center;
+padding: 20px;
+}
+
+
+.button-one, .button-two, .button-three{
+text-align: center;
+cursor: pointer;
+font-size:16px;
+margin: 0 0 0 100px;
+}
+
+
+
+/*Button One*/
+.button-one {
+padding:10px 30px;
+outline: none;
+background-color: #264d73;
+border: none;
+border-radius:5px;
+box-shadow: 0 9px #95a5a6;
+}
+
+.button-one:hover{
+background-color: #264d73;
+}
+
+.button-one:active {
+background-color: #264d73;
+box-shadow: 0 5px #95a5a6;
+transform: translateY(4px);
+}
+
+/*Button Two*/
+.button-two {
+border-radius: 4px;
+background-color:#54820a;
+border: none;
+padding: 10px;
+width: 200px;
+transition: all 0.5s;
+}
+
+
+.button-two span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.button-two span:after {
+content: '»';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.button-two:hover span {
+padding-right: 25px;
+}
+
+.button-two:hover span:after {
+opacity: 1;
+right: 0;
+}
+
+
+
+/*Button Three*/
+.button-three {
+  position: relative;
+  background-color: #f39c12;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.button-three:hover{
+ background:#fff;
+ box-shadow:0px 2px 10px 5px #97B1BF;
+ color:#000;
+}
+
+.button-three:after {
+  content: "";
+  background: #f1c40f;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button-three:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+/* DIV CENTERED */ 
+.centered{
+position:fixed;
+top: 50%;
+left: 50%;
+margin-top: -9em; /*set to a negative number 1/2 of your height*/
+margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}

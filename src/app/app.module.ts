@@ -8,12 +8,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {TitleComponent} from './title.component';
 
 import { AppComponent } from './app.component';
+import { MatchListComponent } from './match-list/match-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TitleComponent
+    TitleComponent,
+    MatchListComponent
   
   ],
   imports: [
