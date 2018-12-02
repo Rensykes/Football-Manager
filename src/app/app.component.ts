@@ -12,11 +12,13 @@ import { HttpHeaders } from '@angular/common/http';
   providers:[FetchdataService]
 })
 export class AppComponent implements OnInit{
-  posts={};
-  postJSON:JSON;
-  title='Angular HttpClient';
+  title='Partite e risultati per oggi';
   header = new HttpHeaders({'X-Auth-Token':'aa89ef54a73b4df6a2e389906426b90b'})
-  Url = "https://api.football-data.org/v2/competitions/SA/matches"
+  //Url = "https://api.football-data.org/v2/competitions/SA/matches"
+  //UrlToday = 'https://api.football-data.org/v2/matches';
+  //UrlScheduled = 'https://api.football-data.org/v2/competitions/SA/matches?status=SCHEDULED';
+  //UrlFinished = 'https://api.football-data.org/v2/competitions/SA/matches?status=FINISHED';
+  UrlToday = 'https://api.football-data.org/v2/matches/';
   sfide=[];
 
   constructor(private srv: FetchdataService) { }
@@ -24,20 +26,23 @@ export class AppComponent implements OnInit{
 
  
  getPosts() : void {
-  this.srv.getData(this.Url)
+  this.srv.getData(this.UrlToday)
     .subscribe(
       data => {
-        this.posts['campionato'] = data['competition'];
-        this.posts['matches'] = data['matches'];
         for(let match in data['matches']){
-          this.sfide.push({id:data['matches'][match].id,homeTeam:data['matches'][match].homeTeam,
-          awayTeam:data['matches'][match].awayTeam,utcDate:data['matches'][match].utcDate,
-          score:data['matches'][match].score});
+          this.sfide.push({id:data['matches'][match].id,
+                homeTeam:data['matches'][match].homeTeam,
+                awayTeam:data['matches'][match].awayTeam,
+                utcDate:data['matches'][match].utcDate,
+                score:data['matches'][match].score});
         }
-        console.log(this.sfide[0].score.fullTime.homeTeam);
+        //console.log(this.sfide[0].score.fullTime.homeTeam);
+        /*
         for(let match in this.sfide){
           console.log(match['id']);
         }
+        */
+       //console.log(this.sfide);
       },
       error=> console.log(error)
     )

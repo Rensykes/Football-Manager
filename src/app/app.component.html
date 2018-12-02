@@ -1,22 +1,24 @@
 <title name="{{ title }}"></title>
-
-
-<table>
+ 
+<h2>{{title}}</h2>
+ 
+<table border="1px">
   <tr>
     <td>id</td>
     <td>Squadra Casa</td>
     <td>Squadra Ospite</td>
     <td>Risultato</td>
     <td>Data</td>
+    <td>Orario</td>
   </tr>
-  <tr>
-    <!--DEVO FARE LA TABELLA DEI RISULTATI MESSI IN ARRAY DEL COMPONENT-->
-    <td></td>
-    <td>Squadra Casa</td>
-    <td>Squadra Ospite</td>
-    <td>Risultato</td>
-    <td>Data</td>
+  <tr *ngFor="let item of sfide">
+ 
+    <td>{{item.id}}</td>
+    <td>{{item.homeTeam.name}}</td>
+    <td>{{item.awayTeam.name}}</td>
+    <td>{{item.score.fullTime.homeTeam}} - {{item.score.fullTime.awayTeam}}</td>
+    <td>{{item.utcDate | date:'yyyy-MM-dd'}}</td>
+    <td>{{item.utcDate | date:'HH:mm:ss'}}</td>
   </tr>
-
+ 
 </table>
-
