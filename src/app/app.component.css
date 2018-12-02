@@ -87,11 +87,11 @@ h1{
     table-layout: fixed;
   }
   .tbl-header{
-    background-color: rgba(0,0,0,0.7);
-    border: 1px solid rgba(255,255,255,0.3);
+    background-color: rgba(25, 51, 77, .8);
+    border: 1px solid rgba(255, 255, 255, .3);
    }
   .tbl-content{
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(38, 77, 115, .5);
     height:300px;
     overflow-x:auto;
     margin-top: 0px;
@@ -148,4 +148,93 @@ h1{
   }
   ::-webkit-scrollbar-thumb {
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+
+
+  /* DROPDOWN */
+
+  body {
+    background: #2a2a2b;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica;
+  }
+  
+  .big {
+    font-size: 1.2em;
+  }
+  
+  .small {
+    font-size: .7em;
+  }
+  
+  .square {
+    width: .7em;
+    height: .7em;
+    margin: .5em;
+    display: inline-block;
+  }
+  
+  /* Custom dropdown */
+  .custom-dropdown {
+    position: relative;
+    align: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px; /* demo only */
+  }
+  
+  .custom-dropdown select {
+    background-color: #264d73;
+    color: #fff;
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em;	
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button; /* hide default arrow in chrome OSX */
+  }
+  
+  .custom-dropdown::before,
+  .custom-dropdown::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .custom-dropdown::after { /*  Custom dropdown arrow */
+    content: "\25BC";
+    height: 1em;
+    font-size: .625em;
+    line-height: 1;
+    right: 1.2em;
+    top: 50%;
+    margin-top: -.5em;
+  }
+  
+  .custom-dropdown::before { /*  Custom dropdown arrow cover */
+    width: 2em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 3px 3px 0;
+  }
+  
+  .custom-dropdown select[disabled] {
+    color: rgba(0,0,0,.3);
+  }
+  
+  .custom-dropdown select[disabled]::after {
+    color: rgba(0,0,0,.1);
+  }
+  
+  .custom-dropdown::before {
+    background-color: rgba(0,0,0,.15);
+  }
+  
+  .custom-dropdown::after {
+    color: rgba(0,0,0,.4);
   }

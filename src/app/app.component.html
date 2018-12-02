@@ -1,8 +1,11 @@
 <h2>{{title}}</h2>
 
+<span class="custom-dropdown big">
 <select [(ngModel)]="selectedChampionship" required>
   <option *ngFor="let campionato of campionati" [ngValue]="campionato">{{campionato.name}}</option>
 </select>
+</span>
+
 
 <button type="button" (click)="changeChampionship(selectedChampionship)">Cambia</button>
 <section *ngIf="sfide.length">
