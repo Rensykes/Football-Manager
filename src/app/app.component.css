@@ -178,10 +178,9 @@ h1{
   /* Custom dropdown */
   .custom-dropdown {
     position: relative;
-    align: center;
     display: inline-block;
     vertical-align: middle;
-    margin: 10px; /* demo only */
+    margin: 10px;
   }
   
   .custom-dropdown select {
@@ -189,7 +188,7 @@ h1{
     color: #fff;
     font-size: inherit;
     padding: .5em;
-    padding-right: 2.5em;	
+    padding-right: 2.5em;	 
     border: 0;
     margin: 0;
     border-radius: 3px;
@@ -238,3 +237,135 @@ h1{
   .custom-dropdown::after {
     color: rgba(0,0,0,.4);
   }
+
+
+
+  /* BUTTON */
+
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+
+*{margin: 0px; padding: 0px}
+
+
+button{
+  color:#fff;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.button-one, .button-two, .button-three{
+  text-align: center;
+  cursor: pointer;
+  font-size:16px;
+  margin: 0 0 0 100px;
+}
+
+
+
+/*Button One*/
+.button-one {
+  padding:10px 30px;
+  outline: none;
+  background-color: #264d73;
+  border: none;
+  border-radius:5px;
+  box-shadow: 0 9px #95a5a6;
+}
+
+.button-one:hover{
+  background-color: #264d73;
+}
+
+.button-one:active {
+  background-color: #264d73;
+  box-shadow: 0 5px #95a5a6;
+  transform: translateY(4px);
+}
+
+/*Button Two*/
+.button-two {
+  border-radius: 4px;
+  background-color:#54820a;
+  border: none;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+}
+
+
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-two span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+/*Button Three*/
+.button-three {
+    position: relative;
+    background-color: #f39c12;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.button-three:hover{
+   background:#fff;
+   box-shadow:0px 2px 10px 5px #97B1BF;
+   color:#000;
+}
+
+.button-three:after {
+    content: "";
+    background: #f1c40f;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button-three:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+/* DIV CENTERED */ 
+.centered{
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}

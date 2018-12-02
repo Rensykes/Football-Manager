@@ -1,40 +1,44 @@
 <h2>{{title}}</h2>
 
-<span class="custom-dropdown big">
-<select [(ngModel)]="selectedChampionship" required>
-  <option *ngFor="let campionato of campionati" [ngValue]="campionato">{{campionato.name}}</option>
-</select>
-</span>
+  <span class="custom-dropdown big">
+    <select [(ngModel)]="selectedChampionship" required>
+      <option *ngFor="let campionato of campionati" [ngValue]="campionato">{{campionato.name}}</option>
+    </select>
+  </span>
+  <br>
 
 
-<button type="button" (click)="changeChampionship(selectedChampionship)">Cambia</button>
+  <button type="button" class="button-two" (click)="changeChampionship(selectedChampionship)"><span>Seleziona</span></button>
+
+
+
 <section *ngIf="sfide.length">
-<div class="tbl-header">
+  <div class="tbl-header">
     <table cellpadding="0" cellspacing="0">
       <thead>
-          <tr>
-              
-              <th>SQUADRA CASA</th>
-              <th>RISULTATO</th>
-              <th>SQUADRA OSPITE</th>
-              <th>DATA</th>
-              <th>ORARIO</th>
-            </tr>
+        <tr>
+
+          <th>SQUADRA CASA</th>
+          <th>RISULTATO</th>
+          <th>SQUADRA OSPITE</th>
+          <th>DATA</th>
+          <th>ORARIO</th>
+        </tr>
       </thead>
     </table>
   </div>
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0">
       <tbody>
-          <tr *ngFor="let item of sfide">
+        <tr *ngFor="let item of sfide">
 
-              
-              <td>{{item.homeTeam.name}}</td>
-              <td>{{item.score.fullTime.homeTeam}} - {{item.score.fullTime.awayTeam}}</td>
-              <td>{{item.awayTeam.name}}</td>
-              <td>{{item.utcDate | date:'yyyy-MM-dd'}}</td>
-              <td>{{item.utcDate | date:'HH:mm:ss'}}</td>
-            </tr>
+
+          <td>{{item.homeTeam.name}}</td>
+          <td>{{item.score.fullTime.homeTeam}} - {{item.score.fullTime.awayTeam}}</td>
+          <td>{{item.awayTeam.name}}</td>
+          <td>{{item.utcDate | date:'yyyy-MM-dd'}}</td>
+          <td>{{item.utcDate | date:'HH:mm:ss'}}</td>
+        </tr>
       </tbody>
     </table>
   </div>
