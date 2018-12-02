@@ -16,7 +16,7 @@ export class TeamDetailsComponent implements OnInit {
   title='Partite e risultati per oggi';
   header = new HttpHeaders({'X-Auth-Token':'aa89ef54a73b4df6a2e389906426b90b'})
   Url = "https://api.football-data.org/v2/teams";
-  team = [];
+  team = {};
 
   constructor(private srv: FetchdataService,  private route: ActivatedRoute) { }
 
@@ -27,6 +27,7 @@ export class TeamDetailsComponent implements OnInit {
     
       .subscribe(
         data => {
+          this.team = data;
           console.log(data);
         },
         error=> console.log(error)
