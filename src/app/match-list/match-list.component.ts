@@ -24,7 +24,7 @@ export class MatchListComponent implements OnInit {
   constructor(private srv: FetchdataService) { }
 
   getPosts() : void {
-    this.srv.getData(this.UrlToday)
+    this.srv.getData(this.Url)
     
       .subscribe(
         data => {
