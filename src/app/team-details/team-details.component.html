@@ -1,11 +1,57 @@
-<p>{{ team.address }}</p>
-<img src="{{team.crestUrl}}">
+<h1>{{team.name}}</h1>
+<div>
+    <figure>
+        <img src="{{team.crestUrl}}" alt="{{team.name}}">
+    </figure>
 
-<ul>
-    <li *ngFor="let player of team.squad">
-        <a routerLink="/player/{{player.id}}">{{player.name}}</a>
+    <div>
+        <section>
+                <div class="tbl-content">
+                        <table cellpadding="0" cellspacing="0">
+                          <tbody>
+                                <tr>
+                                        <td class="titles">Nome</td>
+                                        <td>{{team.name}} - {{team.sortName}}</td>
+                                      </tr>
+                  <tr>
+                    <td class="titles">Competizione:</td>
+                    <td> {{team.activeCompetitions.name}} </td>
+                  </tr>
 
-    </li>
-</ul>
-
-<a routerLink="/matches">Back</a>
+                  <tr>
+                    <td class="titles">Indirizzo</td>
+                    <td>{{team.address}}</td>
+                  </tr>
+                  <tr>
+                    <td class="titles">Arena/Stadio</td>
+                    <td>{{team.venue}}</td>
+                  </tr>
+                  <tr>
+                    <td class="titles">Sito Web</td>
+                    <td><a href="{{team.website}}" target="blank">Website</a></td>
+                  </tr>
+                  <tr>
+                    <td class="titles">Numero di maglia</td>
+                    <td>{{team.clubColors}}</td>
+                  </tr>
+                </tbody>
+                </table>
+                </div>
+        </section>
+       
+    </div>
+</div>
+<h2>Giocatori</h2>
+<div class="container">
+    <nav class="archive-links">
+        <ol>
+            <li *ngFor="let player of team.squad">
+                <a routerLink="/player/{{player.id}}">
+                    <div class="main-image"></div>
+                    <span class="link-title">{{player.name}}</span>
+                    <span class="link-excerpt">{{player.position}} / {{player.dateOfBirth}}</span>
+                </a>
+            </li>
+        </ol>
+    </nav>
+</div>

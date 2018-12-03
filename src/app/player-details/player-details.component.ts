@@ -11,25 +11,22 @@ import { ActivatedRoute } from "@angular/router";
   providers: [FetchdataService]
 })
 export class PlayerDetailsComponent implements OnInit {
-  player={};
-  header = new HttpHeaders({'X-Auth-Token':'aa89ef54a73b4df6a2e389906426b90b'})
-  Url = "https://api.football-data.org/v2/players";
+  player={}; //object containing informations about the player retrieved from football data
+  Url = "https://api.football-data.org/v2/players"; //endpoint to retrieve informations about the player
   
   constructor(private srv: FetchdataService,  private route: ActivatedRoute) { }
 
   getPosts() : void {
-    const id = this.route.snapshot.paramMap.get("id");
-    const urlReq = `${this.Url}/${id}`;
+    const id = this.route.snapshot.paramMap.get("id"); //id parameter that defines the player to search
+    const urlReq = `${this.Url}/${id}`; //enddpoint correctly builded by concat url/id
     this.srv.getData(urlReq)
-    
-      .subscribe(
+      .subscribe( //async request
         data => {
           this.player = data;
           console.log(data);
         },
         error=> console.log(error)
       )
-      
     }
   
   ngOnInit() {

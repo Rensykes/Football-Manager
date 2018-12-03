@@ -1,7 +1,211 @@
 p{
     color:white;
 }
+
+figure {
+    float: left; margin: 0px 15px 15px 0px;
+}
 img{
     width: 150px;
     height: 200px;
 }
+
+h1{
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h2{
+  font-size: 20px;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.centered{
+    top: 50%;
+    left: 50%;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    }
+
+.container{
+    font-family: "Helvetica Neue", Helvetica, Arial, serif;
+    padding: 30px 30px;
+  }
+
+  nav.archive-links {
+    background-color: rgba(25, 51, 77, .8);
+    box-sizing: content-box;
+    padding: 0;
+    margin: auto;
+    max-width: 50%;
+    /* Ordered list with custom counter */
+    /* Style the title, date & comments of each entry */
+  }
+  nav.archive-links ol {
+    counter-reset: li;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .3);
+    margin: 0;
+    padding: 0px;
+  }
+  nav.archive-links ol li {
+    float: left;
+    clear: left;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+  }
+  nav.archive-links ol,
+  nav.archive-links ol li,
+  nav.archive-links ol li a {
+    display: block;
+  }
+  nav.archive-links ol li a {
+    font-size: 11px;
+    height: 59px;
+    position: relative;
+    text-decoration: none;
+  }
+  nav.archive-links ol li .main-image:after,
+  nav.archive-links ol li .no-main-image:after {
+    color: #b7b7b7;
+    content: counter(li, decimal-leading-zero);
+    counter-increment: li;
+    font-size: 30px;
+    line-height: 59px;
+    height: 59px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+  nav.archive-links li .main-image,
+  nav.archive-links li .no-main-image {
+    float: left;
+    margin-right: 1.5em;
+    width: 60px;
+    height: 60px;
+    background: #e6e6e6;
+  }
+  nav.archive-links li .main-image {
+    background-image: url('http://whoami.altervista.org/img/player.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  nav.archive-links a:link,
+  nav.archive-links a:visited,
+  nav.archive-links a:hover,
+  nav.archive-links a:active {
+    color: #000000;
+  }
+  nav.archive-links ol li a:hover .main-image:after,
+  nav.archive-links ol li a:hover .no-main-image:after {
+    color: #2690d8;
+  }
+  nav.archive-links ol li a:active .main-image:after,
+  nav.archive-links ol li a:active .no-main-image:after,
+  nav.archive-links ol li.active a .main-image:after,
+  nav.archive-links ol li.active a .no-main-image:after {
+    color: #777;
+  }
+  nav.archive-links li + li {
+    border-top: 1px solid #d9d9d9;
+  }
+  nav.archive-links li span {
+    display: block;
+    line-height: 1.5em;
+  }
+  nav.archive-links span.link-title {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-top: 0.6875em;
+    font-size: 1.5em;
+  }
+  nav.archive-links span.link-excerpt {
+    color: #c3c3c3;
+  }
+  
+  /* TABLE */
+  table{
+    width:60%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: rgba(25, 51, 77, .8);
+    border: 1px solid rgba(255, 255, 255, .3);
+   }
+  .tbl-content{
+    background-color: rgba(38, 77, 115, .5);
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  th{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  td{
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: #fff;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  }
+  
+  
+  table a:link, table a:visited, table a:active {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  table a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  /* demo styles */
+  
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  
+  body{
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  section{
+    margin: 200awpx;
+  }
+
+  td.titles{
+    font-weight:bold;
+    text-transform: uppercase;
+  }
+  
+  /* for custom scrollbar for webkit browser*/
+  
+  ::-webkit-scrollbar {
+      width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  
